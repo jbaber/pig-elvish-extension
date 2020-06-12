@@ -9,7 +9,7 @@
       "icons/elf_attribution"
    ],
    "version" : "1.0",
-   "homepage_url" : "https://jbaber.sdf.org",
+   "homepage_url" : "https://github.com/jbaber/pig-elvish-extension",
    "manifest_version" : 2,
    "background" : {
       "scripts" : [
