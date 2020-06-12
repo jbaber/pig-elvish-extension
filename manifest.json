@@ -1,0 +1,23 @@
+{
+   "description" : "Translate the current tab to Pig-Elvish",
+   "name" : "Pig-Elvish",
+   "permissions" : [
+      "activeTab",
+      "contextMenus"
+   ],
+   "web_accessible_resources" : [
+      "icons/elf_attribution"
+   ],
+   "version" : "1.0",
+   "homepage_url" : "https://jbaber.sdf.org",
+   "manifest_version" : 2,
+   "background" : {
+      "scripts" : [
+         "background.js"
+      ]
+   },
+   "icons" : {
+      "96" : "icons/elf.svg",
+      "48" : "icons/elf.svg"
+   }
+}
