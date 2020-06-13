@@ -8,7 +8,7 @@
    "web_accessible_resources" : [
       "icons/elf_attribution"
    ],
-   "version" : "1.0.0",
+   "version" : "1.0.1",
    "homepage_url" : "https://github.com/jbaber/pig-elvish-extension",
    "manifest_version" : 2,
    "background" : {
