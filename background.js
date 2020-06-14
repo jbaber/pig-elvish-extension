@@ -16,8 +16,8 @@ browser.contextMenus.onClicked.addListener(function(info, tab) {
 });
 
 
-/* Listen for via page button */
-browser.pageAction.onClicked.addListener(function() {
+/* Listen for via toolbar button */
+browser.browserAction.onClicked.addListener(function() {
   browser.tabs.executeScript({
     file: "pig-elvish.js"
   });

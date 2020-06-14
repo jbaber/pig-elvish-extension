@@ -5,13 +5,12 @@
       "activeTab",
       "contextMenus"
    ],
-   "page_action": {
+   "browser_action": {
      "browser_style": true,
      "default_icon": {
        "19": "icons/elf.svg",
        "38": "icons/elf.svg"
      },
-     "show_matches": ["<all_urls>"],
      "default_title": "Pig-elvish this page"
    },
    "web_accessible_resources" : [
