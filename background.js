@@ -1,19 +1,24 @@
 var currentTab;
 
-/* Create the context menu */
-browser.contextMenus.create({
-  id: "pig-elvish",
-  title: "Pig-Elvish this page"
-});
+if (typeof browser !== "undefined") {
+  if (typeof browser.contextMenus !== "undefined") {
 
-/* Listen for context menu */
-browser.contextMenus.onClicked.addListener(function(info, tab) {
-  if (info.menuItemId == "pig-elvish") {
-    browser.tabs.executeScript({
-      file: "pig-elvish.js"
+    /* Create the context menu */
+    browser.contextMenus.create({
+      id: "pig-elvish",
+      title: "Pig-Elvish this page"
+    });
+
+    /* Listen for context menu */
+    browser.contextMenus.onClicked.addListener(function(info, tab) {
+      if (info.menuItemId == "pig-elvish") {
+        browser.tabs.executeScript({
+          file: "pig-elvish.js"
+        });
+      }
     });
   }
-});
+}
 
 
 /* Listen for via toolbar button */
