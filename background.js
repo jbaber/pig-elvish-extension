@@ -18,12 +18,14 @@ if (typeof browser !== "undefined") {
       }
     });
   }
+
+
+  /* Listen for via toolbar button */
+  if (typeof browser.browserAction !== "undefined") {
+    browser.browserAction.onClicked.addListener(function() {
+      browser.tabs.executeScript({
+        file: "pig-elvish.js"
+      });
+    });
+  }
 }
-
-
-/* Listen for via toolbar button */
-browser.browserAction.onClicked.addListener(function() {
-  browser.tabs.executeScript({
-    file: "pig-elvish.js"
-  });
-});
