@@ -23,7 +23,12 @@ icons/png/elf96.png: icons/elf.svg
 firefox_extension:
 	web-ext build
 
+# Should just be a copy of chrome_store_icon.png
+chrome_extension: icon_128.png
+	git archive --format=zip --prefix=pig-elvish-1.1.4/ release-1.1.4 > pig-elvish-1.1.4.zip
+
 .PHONY: clean
 
 clean:
 	rm -rf web-ext-artifacts
+	rm pig-elvish-1.1.4.zip
