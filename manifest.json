@@ -8,8 +8,8 @@
    "browser_action": {
      "browser_style": true,
      "default_icon": {
-       "19": "icons/elf.svg",
-       "38": "icons/elf.svg"
+       "19": "icons/png/elf19.png",
+       "38": "icons/png/elf38.png"
      },
      "default_title": "Pig-elvish this page"
    },
@@ -26,7 +26,7 @@
       "persistent": false
    },
    "icons" : {
-      "96" : "icons/elf.svg",
-      "48" : "icons/elf.svg"
+      "96" : "icons/png/elf96.png",
+      "48" : "icons/png/elf48.png"
    }
 }
