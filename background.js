@@ -20,10 +20,22 @@ if (typeof browser !== "undefined") {
   }
 
 
-  /* Listen for via toolbar button */
+  /* Listen for via toolbar button (firefox) */
   if (typeof browser.browserAction !== "undefined") {
     browser.browserAction.onClicked.addListener(function() {
       browser.tabs.executeScript({
+        file: "pig-elvish.js"
+      });
+    });
+  }
+
+}
+
+/* Listen for via toolbar button (chrome) */
+if (typeof chrome !== "undefined") {
+  if (typeof chrome.browserAction !== "undefined") {
+    chrome.browserAction.onClicked.addListener(function(tab) {
+      chrome.tabs.executeScript({
         file: "pig-elvish.js"
       });
     });

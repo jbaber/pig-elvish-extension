@@ -22,7 +22,8 @@
    "background" : {
       "scripts" : [
          "background.js"
-      ]
+      ],
+      "persistent": false
    },
    "icons" : {
       "96" : "icons/elf.svg",
