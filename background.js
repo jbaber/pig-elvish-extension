@@ -34,7 +34,7 @@ if (typeof browser !== "undefined") {
 /* Listen for via toolbar button (chrome) */
 if (typeof chrome !== "undefined") {
   if (typeof chrome.browserAction !== "undefined") {
-    chrome.browserAction.setIcon({path: 'icons/elf.svg'});
+    chrome.browserAction.setIcon({path: 'icons/elf.png'});
     chrome.browserAction.onClicked.addListener(function(tab) {
       chrome.tabs.executeScript({
         file: "pig-elvish.js"
