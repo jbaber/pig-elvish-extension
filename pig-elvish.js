@@ -46,6 +46,23 @@ function append_random_vowel(word) {
 }
 
 
+function match_caps(somestring, skeleton) {
+  var to_return = "";
+  var min_lengths = Math.min(somestring.length, skeleton.length);
+  var max_lengths = Math.max(somestring.length, skeleton.length);
+  for (var i = 0; i < min_lengths; i++) {
+    if (is_caps(skeleton[i])) {
+      to_return += somestring[i].toUpperCase();
+    }
+    else {
+      to_return += somestring[i].toLowerCase();
+    }
+  }
+
+  return to_return + somestring.substr(min_lengths);
+}
+
+
 /* Original algorithm: https://inherweb.wordpress.com/2005/09/30/pig-elvish/ */
 function elvish_this_word(word) {
   if (word.length < 1) {
