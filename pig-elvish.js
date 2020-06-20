@@ -223,6 +223,14 @@ function elvish_all_text(domelt) {
 }
 
 
+/* https://stackoverflow.com/questions/990904/remove-accents-diacritics-in-a-string-in-javascript
+ * Separates accented characters into plain characters followed by combining diacritics,
+ * then removes the latter */
+function remove_diacritics(text) {
+  return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+
 function main() {
   elvish_all_text(document.body);
 }
