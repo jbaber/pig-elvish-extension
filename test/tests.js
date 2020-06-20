@@ -18,28 +18,33 @@ QUnit.test("remove_diacritics test", function(assert) {
 
 
 QUnit.test("elvish_this_word test", function(assert) {
-  var mangled = remove_diacritics(elvish_this_word("howdy"));
-  assert.strictEqual(mangled.substring(0, mangled.length - 1), "owdyh");
+  var mangled = remove_diacritics(elvish_this_word("howky"));
+  assert.strictEqual(mangled.substring(0, mangled.length - 1), "owcyh");
   assert.ok(is_a_vowel(mangled[mangled.length - 1]));
   assert.ok(!is_caps(mangled[mangled.length - 1]));
 
-  mangled = remove_diacritics(elvish_this_word("Howdy"));
-  assert.strictEqual(mangled.substring(0, mangled.length - 1), "Owdyh");
+  mangled = remove_diacritics(elvish_this_word("Howky"));
+  assert.strictEqual(mangled.substring(0, mangled.length - 1), "Owcyh");
   assert.ok(is_a_vowel(mangled[mangled.length - 1]));
   assert.ok(!is_caps(mangled[mangled.length - 1]));
 
-  mangled = remove_diacritics(elvish_this_word("hOwdy"));
-  assert.strictEqual(mangled.substring(0, mangled.length - 1), "oWdyh");
+  mangled = remove_diacritics(elvish_this_word("hOwky"));
+  assert.strictEqual(mangled.substring(0, mangled.length - 1), "oWcyh");
   assert.ok(is_a_vowel(mangled[mangled.length - 1]));
   assert.ok(!is_caps(mangled[mangled.length - 1]));
 
-  mangled = remove_diacritics(elvish_this_word("howdY"));
-  assert.strictEqual(mangled.substring(0, mangled.length - 1), "owdyH");
+  mangled = remove_diacritics(elvish_this_word("howKy"));
+  assert.strictEqual(mangled.substring(0, mangled.length - 1), "owcYh");
+  assert.ok(is_a_vowel(mangled[mangled.length - 1]));
+  assert.ok(!is_caps(mangled[mangled.length - 1]));
+
+  mangled = remove_diacritics(elvish_this_word("howkY"));
+  assert.strictEqual(mangled.substring(0, mangled.length - 1), "owcyH");
   assert.ok(is_a_vowel(mangled[mangled.length - 1]));
   assert.ok(is_caps(mangled[mangled.length - 1]));
 
-  mangled = remove_diacritics(elvish_this_word("HOWDY"));
-  assert.strictEqual(mangled.substring(0, mangled.length - 1), "OWDYH");
+  mangled = remove_diacritics(elvish_this_word("HOWKY"));
+  assert.strictEqual(mangled.substring(0, mangled.length - 1), "OWCYH");
   assert.ok(is_a_vowel(mangled[mangled.length - 1]));
   assert.ok(is_caps(mangled[mangled.length - 1]));
 
