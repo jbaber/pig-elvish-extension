@@ -226,7 +226,7 @@ function mangle_all_text(domelt, style) {
   for (let node of domelt.childNodes) {
     switch (node.nodeType) {
       case Node.ELEMENT_NODE:
-        elvish_all_text(node);
+        mangle_all_text(node, style);
       break;
       case Node.TEXT_NODE:
         if (node.textContent.length > 1) {
@@ -234,7 +234,7 @@ function mangle_all_text(domelt, style) {
         }
       break;
       case Node.DOCUMENT_NODE:
-        elvish_all_text(node);
+        mangle_all_text(node, style);
     }
   }
 }
