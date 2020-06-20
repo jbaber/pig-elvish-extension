@@ -69,7 +69,7 @@ function elvish_this_word(word) {
     return word;
   }
 
-  var to_return = move_first_letter_to_end(word);
+  var to_return = match_caps(move_first_letter_to_end(word), word);
 
   /* Add 'en' if short */
   if (to_return.length <= 3) {
