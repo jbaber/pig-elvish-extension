@@ -63,6 +63,15 @@ function match_caps(somestring, skeleton) {
 }
 
 
+function mangle_this_word(word, style) {
+  if (style == "pig-elvish") {
+    return elvish_this_word(word);
+  }
+
+  return word;
+}
+
+
 /* Original algorithm: https://inherweb.wordpress.com/2005/09/30/pig-elvish/ */
 function elvish_this_word(word) {
   if (word.length < 1) {
@@ -194,7 +203,7 @@ function is_a_letter(letter) {
 }
 
 
-function elvish_this_text(text) {
+function mangle_this_text(text, style) {
   var to_return = "";
   var cur_word = "";
   for (var i = 0; i < text.length; i++) {
@@ -203,11 +212,11 @@ function elvish_this_text(text) {
       cur_word += cur_char;
     }
     else {
-      to_return += elvish_this_word(cur_word) + cur_char;
+      to_return += mangle_this_word(cur_word, style) + cur_char;
       cur_word = "";
     }
   }
-  to_return += elvish_this_word(cur_word);
+  to_return += mangle_this_word(cur_word, style);
   return to_return;
 }
 
@@ -221,7 +230,7 @@ function elvish_all_text(domelt) {
       break;
       case Node.TEXT_NODE:
         if (node.textContent.length > 1) {
-          node.textContent = elvish_this_text(node.textContent);
+          node.textContent = mangle_this_text(node.textContent, "pig-elvish");
         }
       break;
       case Node.DOCUMENT_NODE:
