@@ -48,6 +48,11 @@ QUnit.test("elvish_this_word test", function(assert) {
   assert.ok(is_a_vowel(mangled[mangled.length - 1]));
   assert.ok(is_caps(mangled[mangled.length - 1]));
 
+  mangled = remove_diacritics(elvish_this_word("Robot"));
+  assert.strictEqual(mangled.substring(0, mangled.length - 1), "Obotr");
+  assert.ok(is_a_vowel(mangled[mangled.length - 1]));
+  assert.ok(!is_caps(mangled[mangled.length - 1]));
+
   mangled = remove_diacritics(elvish_this_word("how"));
   assert.strictEqual(mangled, "owhen");
 
@@ -90,4 +95,13 @@ QUnit.test("elvish_this_word test", function(assert) {
   assert.ok(!is_caps(mangled[59]));
   assert.strictEqual(mangled[60], ".");
   assert.strictEqual(mangled[61], undefined);
+
+  mangled = remove_diacritics(mangle_this_text("Robot Pancakes", "pig-elvish"));
+  assert.strictEqual(mangled.substring(0, 5), "Obotr");
+  assert.ok(is_a_vowel(mangled[5]));
+  assert.ok(!is_caps(mangled[5]));
+  assert.strictEqual(mangled.substring(6, 15), " Ancacesp");
+  assert.ok(is_a_vowel(mangled[15]));
+  assert.ok(!is_caps(mangled[15]));
+
 });
