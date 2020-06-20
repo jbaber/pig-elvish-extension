@@ -222,7 +222,7 @@ function mangle_this_text(text, style) {
 
 
 /* From https://stackoverflow.com/a/50537862 */
-function elvish_all_text(domelt) {
+function mangle_all_text(domelt, style) {
   for (let node of domelt.childNodes) {
     switch (node.nodeType) {
       case Node.ELEMENT_NODE:
@@ -230,7 +230,7 @@ function elvish_all_text(domelt) {
       break;
       case Node.TEXT_NODE:
         if (node.textContent.length > 1) {
-          node.textContent = mangle_this_text(node.textContent, "pig-elvish");
+          node.textContent = mangle_this_text(node.textContent, style);
         }
       break;
       case Node.DOCUMENT_NODE:
@@ -249,7 +249,7 @@ function remove_diacritics(text) {
 
 
 function main() {
-  elvish_all_text(document.body);
+  mangle_all_text(document.body, "pig-elvish");
 }
 
 
