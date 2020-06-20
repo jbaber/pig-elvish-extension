@@ -79,6 +79,14 @@ function elvish_this_word(word) {
     else {
       to_return += "en";
     }
+
+    /* Special cases for A and I */
+    if (word == "I") {
+      to_return = "Ien";
+    }
+    if (word == "A") {
+      to_return = "Aen";
+    }
   }
 
   /* Append random vowel */
