@@ -229,7 +229,10 @@ function mangle_all_text(domelt, style) {
         mangle_all_text(node, style);
       break;
       case Node.TEXT_NODE:
-        if (node.textContent.length > 1) {
+
+        /* Only mangle each node once */
+        if (node.textContent.length > 1 && node.parentNode.dataset.mangler_was_here !== "true") {
+          node.parentNode.dataset.mangler_was_here = "true";
           node.textContent = mangle_this_text(node.textContent, style);
         }
       break;
